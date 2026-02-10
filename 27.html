@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *
+        {
+            margin: 0;
+            /* padding: 0; */
+            font-family: "Poppins";
+            /* font-family: "Martel Sans"; */
+        }
+        body
+        {
+            background-color: black;
+        }
+
+
+
+
+        
+        .main
+        {
+            /* border: 2px solid green; */
+            height: 80vh;   
+            background-image: url("bg2.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: max(1200px,100vw);
+            position: relative;
+        }
+        .main .box
+        {
+            width: 100%;
+            height: 80vh;
+            background-color: black;
+            opacity: 0.73;
+            position: absolute;
+            top: 0px;
+        }
+        nav
+        {
+            /* border: 2px solid red; */
+            height: 62px;
+            /* max-width: 85vw; */
+            max-width: 60vw;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav img
+        {
+            color: red;
+            width: 114px;
+            position: relative;
+            z-index: 10;
+        }
+        nav button
+        {
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+        }
+        .hero
+        {
+            /* border: 2px solid yellow; */
+            /* font-family: "Martel Sans"; */
+            height: 100%;
+            height: calc(100% - 62px);
+            color: white;
+            position: relative;
+            /* z-index: 2; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 23px;
+            padding: 0px 30px;
+
+        }
+        .hero> :nth-child(1)
+        {
+            /* border: 2px solid blue; */
+            /* width: 30vw; */
+            text-align: center;
+            font-weight: bolder;
+            font-size: 48px;
+            /* font-size: 2rem; */
+        }
+        .hero> :nth-child(2)
+        {
+            font-weight: bold;
+            font-size: 22px;
+            /* font-size: 1.1rem; */
+            text-align: center;
+        }
+        .hero> :nth-child(3)
+        {
+            font-weight: 400;
+            font-size: 18px;
+            /* font-size: 1.1rem; */
+            text-align: center;
+        }
+        .line
+        {
+            height: 6px;
+            background-color: rgb(59, 59, 59);
+            position: relative;
+            z-index: 10;
+        }
+        .btn
+        {
+            padding:3px 8px;
+            /* font-weight: bold; */
+            color: white;
+            background-color: rgba(23, 23, 23, 0.8);
+            border-radius: 4px;
+            position: relative;
+            z-index: 10;
+        }
+        select
+        {
+            /* padding: 5px 8px;
+            border-radius: 4px;
+            background-color: rgba(23, 23, 23, 0.8);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            cursor: pointer; */
+
+            /* position: relative;
+            z-index: 10; */
+        }
+        .btn-red
+        {
+            background-color: red;
+            color: white;
+            /* font-weight: bold; */
+            border: none;
+            padding: 3px 24px;
+            font-size: 20px;
+            border-radius: 4px;
+        }
+        .btn-red-sm
+        {
+            background-color: red;
+            color: white;
+            border: none;
+            /* padding: 5px 13px; */
+            /* font-size: 10px; */
+            border-radius: 4px;
+        }
+        /* .main input */
+        input
+        {
+            /* width: 240px; */
+            /* height: 30px; */
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.375);
+            padding: 10px 35px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+
+            /* background-color: transparent; */
+            background-color: rgba(23, 23, 23, 0.8);
+            /* border: 1px solid grey; */
+        }
+        .hero-btn
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .first
+        {
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 70vw;
+            margin: auto;
+            color: white;
+            /* text-align: center; */
+            /* gap: 10px; */
+            /* padding: 4px 0px; */
+            /* font-size: 20px; */
+        }
+        .secimg
+        {
+            /* border: 2px solid rgb(255, 208, 0); */
+            position: relative;
+        }
+        .secimg img
+        {
+            /* border: 2px solid rgb(255, 255, 255); */
+            width: 550px;
+            /* width: 30vw; */
+            /* position: relative; */
+            /* z-index: 10; */
+        }
+        .secimg video
+        {
+            /* border: 2px solid rgb(255, 255, 255); */
+            /* width: 550px; */
+            /* width: 22vw; */
+            width: 396px;
+            position: absolute;
+            top: 5px;
+            right: 79px;
+            /* transform: translate(-50%,-50%); */
+        }
+        .first > div
+        {
+            /* border: 2px solid blue; */
+
+            /* ----display flex not needed as it is a paragraph;-------- */
+            /* display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 20px 0px; */
+        }
+        .first > div :first-child
+        {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .first > div :nth-child(2)
+        {
+            font-size: 17px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .faq
+        {
+            color: white;
+            /* text-align: center; */
+            margin: 30px 0px;
+            /* padding: 30px; */
+        }
+        .faq h2
+        {
+            text-align: center;
+            /* font-size: 40px; */
+        }
+        .faq button
+        {
+            cursor: pointer;
+            border: none;
+            color: white;
+            background-color: transparent;
+            padding: 3px 8px;
+            font-size: large;
+            /* position: relative; */
+            /* z-index: 10; */
+        }
+        .faqbox
+        {
+            transition: background-color 0.3s ease;
+            background-color: rgb(65, 65, 65);
+            display: flex;
+            justify-content: space-between;
+            max-width: 50vw;
+            margin: 10px auto;
+            padding: 20px;
+            cursor: pointer;
+        }
+        .faqbox:hover
+        {
+            background-color: rgb(90, 90, 90);
+            /* transition: background-color 0.5s ease-out; */
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        footer
+        {
+            /* border: 2px solid red; */
+            color: rgb(205, 205, 205);
+            max-width: 50vw;
+            margin: auto;
+        }
+        .footer
+        {
+            /* border: 2px solid blue; */
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            /* color: rgb(205, 205, 205); */
+        }
+        .footer-items
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* align-items: flex-start; */
+        }
+        footer a
+        {
+            color: rgb(205, 205, 205);
+            /* margin: 6px 0px; */
+            /* font-size: 14px; */
+        }
+        .qnumber
+        {
+            padding: 30px 0px;
+            /* padding: 0px 0px 30px 0px; */
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width:1200px)
+        {
+            nav img
+            {
+                width: 80px;
+            }
+         
+         
+            nav
+            {
+                max-width: 90vw;
+            }
+         
+            .first
+            {
+                flex-wrap: wrap;
+            }
+            .footer
+            {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                gap: 18px;
+            }
+
+            .main input
+            {
+                padding: 5px 25px;
+                font-size: 12px;
+                font-weight: 600;
+
+            }
+            .hero-btn
+            {
+                flex-direction: column;
+            }
+            nav div
+            {
+                display: flex;
+                flex-direction: column;
+            }
+            .hero> :nth-child(1)
+            {
+                font-size: 24px;
+            }
+            .hero> :nth-child(2)
+            {
+                font-size: 16px;
+            }
+            .hero> :nth-child(3)
+            {
+                font-size: 13px;
+            }
+            .btn-red
+            {
+                padding: 5px 14px;
+                font-size: 12px;
+            }
+            .secimg img
+            {
+                width: 275px;
+            }
+            .secimg video
+            {
+                width: 198px;
+                position: absolute;
+                top: 3px;
+                right: 40px;
+            }
+            .first > div :first-child
+            {
+                font-size: 15px;
+                font-weight: bold;
+            }
+            .first > div :nth-child(2)
+            {
+                font-size: 13px;
+            }
+            footer-items
+            {
+                font-size: 12px;
+            }
+            .faq h2
+            {
+                font-size: 15px;
+                /* max-width: 60vw;
+                margin: auto; */
+            }
+            .faqbox
+            {
+                font-size: 13px;
+                padding: 4px;
+                margin: 7px auto;
+            }
+            
+            .footer-items, .qnumber
+            {
+                font-size: 12px;
+            }
+            .qnumber
+            {
+                padding: 15px 0px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+        @media (max-width: 768px)
+        {
+            .main
+            {
+                height: auto;
+            }
+            .main .box
+            {
+                height: auto;
+            }
+            nav
+            {
+                max-width: 90vw;
+                padding: 10px 0px;
+            }
+            .hero
+            {
+                padding: 20px 10px;
+                gap: 15px;
+            }
+            .hero> :nth-child(1)
+            {
+                font-size: 30px;
+            }
+            .hero> :nth-child(2)
+            {
+                font-size: 18px;
+            }
+            .hero> :nth-child(3)
+            {
+                font-size: 14px;
+            }
+            .hero-btn
+            {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .hero-btn input
+            {
+                width: 80vw;
+                height: 30px;
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+            .hero-btn button
+            {
+                width: 80vw;
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+            .first
+            {
+                flex-direction: column;
+                gap: 20px;
+                max-width: 90vw;
+                text-align: center;
+            }
+            .secimg img
+            {
+                width: 80vw;
+            }
+            .secimg video
+            {
+                width: 60vw;
+                top: auto;
+                right: auto;
+                position: relative;
+            }
+            .faqbox
+            {
+                max-width: 90vw;
+            }
+        } */
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <span><img src="logo.svg"></span>
+            <!-- <img src="logo.svg"> -->
+            <div>
+                <select name="o" id="i" class="btn">
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                </select>
+                <!-- <button class="btn">English</button> -->
+                <button class="btn btn-red-sm">Sign In</button>
+            </div>
+        </nav>
+        <div class="box"></div>
+        <div class="hero">
+            <span>Unlimited movies, TV shows and more</span>
+            <span>Starts at ₹149. Cancel at any time.</span>
+            <span>Ready to watch? Enter your email to create or restart your membership.</span>
+            <div class="hero-btn">
+                <input type="text" placeholder="Email address">
+                <button class="btn btn-red">Get Started&gt;</button>
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+
+
+
+
+
+
+
+
+    <section class="first">
+        <div>
+            <p>Enjoy on your tv</p>
+            <p>Watch on smart tvs, playstation, xbox, chromecast, apple tv, blu-ray players and more.</p>
+        </div>
+        <div class="secimg">
+            <img src="Screenshot 2025-09-08 202659.png">
+            <video src="Video 53_assets_videos_video1.m4v" autoplay loop muted></video>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section class="first second">
+
+        <div class="secimg">
+            <img src="Screenshot 2025-mm.png">
+        </div>
+        <div>
+            <p>Download your shows to watch offline</p>
+            <p>Save your favourites easily and always have something to watch.</p>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section class="first third">
+        <div>
+            <p>Watch everywhere</p>
+            <p>Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</p>
+        </div>
+        <div class="secimg">
+            <!-- <img src="Screenshot 2025-09-08 202659.png">
+            <video src="Video 53_assets_videos_video1.m4v" autoplay loop muted></video> -->
+            <img src="Screenshot 2025-1.png">
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section class="first second">
+        <div class="secimg">
+            <img src="Screenshot 2025-l.png">
+        </div>
+        <div>
+            <p>Create profiles for kids</p>
+            <p>Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</p>
+        </div>
+    </section>
+
+    <div class="line"></div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faqbox">
+            <span>What is netflix</span>
+            <button>+</button>
+        </div>
+        <div class="faqbox">
+            <span>How much does Netflix cost?</span>
+            <button>+</button>
+        </div>
+        <div class="faqbox">
+            <span>Where can I watch?</span>
+            <button>+</button>
+        </div>
+        <div class="faqbox">
+            <span>How do I cancel?</span>
+            <button>+</button>
+        </div>
+        <div class="faqbox">
+            <span>What can I watch on Netflix?</span>
+            <button>+</button>
+        </div>
+        <div class="faqbox">
+            <span>Is Netflix good for kids?</span>
+            <button>+</button>
+        </div>
+    </section>
+
+    <!-- <div class="line"></div> -->
+    
+    <div class="hero">
+        <span></span>
+        <span></span>
+        <span>Ready to watch? Enter your email to create or restart your membership.</span>
+        <div class="hero-btn">
+            <input type="text" placeholder="Email address">
+            <button class="btn btn-red">Get Started&gt;</button>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+    <!-- <div class="line"></div> -->
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="qnumber">Questions? Call <a href="">000-800-919-1743</a></div>
+        <!-- <p class="qnumber">Questions? Call <a href="">000-800-919-1743</a></p> -->
+
+        <!-- <span class="qnumber">Questions? Call 000-800-919-1743</span> -->
+        <!-- padding doesnt work in span -->
+        
+        <div class="footer">
+            <div class="footer-items">
+                <a href="">FAQ</a>
+                <a href="">Investor Relations</a>
+                <a href="">Privacy</a>
+                <a href="">Speed test</a>
+            </div>
+            <div class="footer-items">
+                <a href="">Help Centre</a>
+                <a href="">Jobs</a>
+                <a href="">Cookie Preferences</a>
+                <a href="">Legal Notices</a>
+            </div>
+            <div class="footer-items">
+                <a href="">Account</a>
+                <a href="">Ways to Watch</a>
+                <a href="">Corporate Information</a>
+                <a href="">Only on Netflix</a>
+            </div>
+            <div class="footer-items">
+                <a href="">Media Centre</a>
+                <a href="">Terms of Use</a>
+                <a href="">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+</html>
